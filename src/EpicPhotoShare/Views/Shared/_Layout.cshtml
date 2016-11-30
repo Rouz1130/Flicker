@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="~/css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="~/css/demo.css" />
     <link rel="stylesheet" type="text/css" href="~/css/layout-simple.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/styles.css" />
     <!--[if IE]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -18,17 +19,13 @@
         <header class="intro">
             <img class="intro__image" src="~/img/header03.jpg" alt="Iceland galcier" />
             <div class="intro__content">
-                <h1 class="intro__title">Essential Feelings</h1>
+                <h1 class="intro__title">Welcome to EpicPhotoShare</h1>
                 <div class="intro__subtitle">
-                    <div class="codrops-links">
-                        <a class="codrops-icon codrops-icon--prev" href="http://tympanus.net/Development/ElasticSVGElements/" title="Previous Demo"><span>Previous Demo</span></a>
-                        <a class="codrops-icon codrops-icon--drop" href="http://tympanus.net/codrops/?p=21934" title="Back to the a"><span>Back to the Codrops a</span></a>
-                    </div>
                     <div class="intro__description">
-                        A layout with a sliding header and an image grid. Photo courtesy of <a href="http://instagram.com/danrubin/">Dan Rubin</a>.
+                        A photography site built NOT by photographers.
                         <div class="demos">
-                            <a class="demos__item demos__item--current" href="index.html">Simple</a>
-                            <a class="demos__item" href="layout-multi.html">Multi</a>
+                            @Html.ActionLink("Home", "Index", "Home", null, new { @class = "demos__item" })
+                            @Html.ActionLink("New User", "Register", "Home", null, new { @class = "demos__item" })
                         </div>
                     </div>
                     <button class="trigger">
@@ -49,8 +46,10 @@
                 </div>
             </div><!-- /intro__content -->
         </header><!-- /intro -->
-    @RenderBody()
     </div><!-- /container -->
+    <div class="padding-huge"></div>
+    @RenderBody()
+  
     <script src="~/js/classie.js"></script>
     <script>
 			(function() {

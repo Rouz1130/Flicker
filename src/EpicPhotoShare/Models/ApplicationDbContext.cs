@@ -17,5 +17,6 @@ namespace EpicPhotoShare.Models
         {
             base.OnModelCreating(builder);
         }
+        public DbSet<Image> Images { get; set; }
     }
 }

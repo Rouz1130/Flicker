@@ -1,0 +1,11 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="padding-huge"></div>
+
+<h2>Upload Image</h2>
+<hr />
+<form method="post" asp-action="Create" asp-controller="Home" enctype="multipart/form-data">
+    <input type="file" name="files" multiple />
+    <input type="submit" value="Upload" />
+</form>

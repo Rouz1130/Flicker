@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using System.Security.Claims
+<!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>
     <meta charset="UTF-8" />
@@ -24,8 +25,19 @@
                     <div class="intro__description">
                         A photography site built NOT by photographers.
                         <div class="demos">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            @Html.ActionLink("Logoff", "Logoff", "Home", null, new { @class = "demos__item" })
+                            @Html.ActionLink("Add Pictures", "Create", "User", null, new   { @class = "demos__item" })
+                            
+                        }
+                        else
+                        {
                             @Html.ActionLink("Home", "Index", "Home", null, new { @class = "demos__item" })
-                            @Html.ActionLink("New User", "Register", "Home", null, new { @class = "demos__item" })
+                            @Html.ActionLink("Sign UP", "Register", "Home", null, new { @class = "demos__item" })
+                            @Html.ActionLink("Login", "Login", "Home", null, new { @class = "demos__item" })
+                        }
+
                         </div>
                     </div>
                     <button class="trigger">
@@ -46,9 +58,10 @@
                 </div>
             </div><!-- /intro__content -->
         </header><!-- /intro -->
-    </div><!-- /container -->
-    <div class="padding-huge"></div>
     @RenderBody()
+    </div><!-- /container -->
+
+ 
   
     <script src="~/js/classie.js"></script>
     <script>

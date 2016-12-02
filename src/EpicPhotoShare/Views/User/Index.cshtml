@@ -1,0 +1,22 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using System.Security.Claims
+@model IEnumerable<EpicPhotoShare.Models.Image>
+
+<section class="items-wrap">
+@if (Model.Any())
+{
+    @foreach (var image in Model)
+    {
+        <a href="#" class="item">
+            <img class="item__image" src="@image.Source" alt="image.Source" />
+            
+        </a>
+    }
+}
+else
+{
+    <p>Press Create to add your first image.</p>
+}
+</section>
